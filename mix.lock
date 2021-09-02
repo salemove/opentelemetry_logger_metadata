@@ -1,0 +1,6 @@
+%{
+  "jason": {:hex, :jason, "1.2.2", "ba43e3f2709fd1aa1dce90aaabfd039d000469c05c56f0b8e31978e03fa39052", [:mix], [{:decimal, "~> 1.0 or ~> 2.0", [hex: :decimal, repo: "hexpm", optional: true]}], "hexpm", "18a228f5f0058ee183f29f9eae0805c6e59d61c3b006760668d8d18ff0d12179"},
+  "logstash_logger_formatter": {:hex, :logstash_logger_formatter, "1.1.1", "1340a0b18bed603b32a31392f5fef60d0693704ddd5119d36a6598d48afc8f93", [:mix], [{:jason, "~> 1.0", [hex: :jason, repo: "hexpm", optional: true]}], "hexpm", "6a79947372c3020c86283bd217fbcfbf5722cab75e7ff92f77249c73e1f708a4"},
+  "opentelemetry": {:hex, :opentelemetry, "1.0.0-rc.2", "d3e1fd9debfd73e00b0241cac464be7cd6ca6ac2bd38ab2ebe0c92401c76a342", [:rebar3], [{:opentelemetry_api, "~> 1.0.0-rc.2", [hex: :opentelemetry_api, repo: "hexpm", optional: false]}], "hexpm", "2f810e2eed70a9ea0c9b6943969b59e37f96a2f9e10920045a6c7676c2ab8181"},
+  "opentelemetry_api": {:hex, :opentelemetry_api, "1.0.0-rc.2", "a0ec5b242bb7ce7563b4891e77dcfa529defc9e42c19a5a702574c5ac3d0c6e7", [:mix, :rebar3], [], "hexpm", "426a969c8ee2afa8ab55b58e6e40e81c1f934c064459a1acb530f54042f9a9a3"},
+}
