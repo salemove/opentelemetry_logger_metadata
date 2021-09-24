@@ -7,7 +7,21 @@ on:
     branches: [ master ]
 
 jobs:
-  test:
+  erlang:
+    name: Test on OTP ${{ matrix.otp_version }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        otp_version: ['23.0']
+    steps:
+    - uses: actions/checkout@v2
+    - uses: erlef/setup-beam@v1
+      with:
+        otp-version: ${{ matrix.otp_version }}
+    - name: Compile
+      run: rebar3 compile
+
+  elixir:
     name: OTP ${{matrix.otp_version}} / Elixir ${{matrix.elixir}}
     runs-on: ubuntu-latest
     strategy:

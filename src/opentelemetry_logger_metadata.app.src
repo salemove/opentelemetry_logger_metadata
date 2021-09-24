@@ -1,0 +1,14 @@
+{application, opentelemetry_logger_metadata,
+ [{description, "Adds OpenTelemetry trace identifiers to logs"},
+  {vsn, {file, "VERSION"}},
+  {registered, []},
+  {applications, [kernel, stdlib, opentelemetry_api]},
+  {env, []},
+  {modules, []},
+  {licenses, ["MIT"]},
+  {links, [
+           {"GitHub", "https://github.com/salemove/opentelemetry_logger_metadata"},
+           {"OpenTelemetry Erlang", "https://github.com/open-telemetry/opentelemetry-erlang"},
+           {"OpenTelemetry.io", "https://opentelemetry.io"}
+          ]}
+ ]}.
