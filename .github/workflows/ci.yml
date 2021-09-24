@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        otp_version: ['23.0']
+        otp_version: ['24.0']
     steps:
     - uses: actions/checkout@v2
     - uses: erlef/setup-beam@v1
