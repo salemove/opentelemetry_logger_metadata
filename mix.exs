@@ -26,7 +26,8 @@ defmodule OpentelemetryLoggerMetadata.MixProject do
           "OpenTelemetry Erlang" => "https://github.com/open-telemetry/opentelemetry-erlang",
           "OpenTelemetry.io" => "https://opentelemetry.io"
         },
-        files: ~w(lib .formatter.exs mix.exs README* LICENSE* CHANGELOG*)
+        files:
+          ~w(lib .formatter.exs mix.exs README* LICENSE* CHANGELOG* rebar.config rebar.lock VERSION src)
       ]
     ]
   end
