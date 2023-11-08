@@ -21,7 +21,6 @@ In your application start:
 
 ```elixir
     def start(_type, _args) do
-      OpenTelemetry.register_application_tracer(:my_project)
       OpentelemetryLoggerMetadata.setup()
 
       # ...
