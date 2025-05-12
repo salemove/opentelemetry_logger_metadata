@@ -52,7 +52,7 @@ defmodule OpentelemetryLoggerMetadata.MixProject do
       {:opentelemetry, "~> 1.0", only: [:test]},
       {:logstash_logger_formatter, "~> 1.1", only: [:test]},
       {:jason, "~> 1.0", only: [:test]},
-      {:ex_doc, "~> 0.24", only: [:dev], runtime: false}
+      {:ex_doc, "~> 0.31", only: [:dev], runtime: false}
     ])
   end
 
