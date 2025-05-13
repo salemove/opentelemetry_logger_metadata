@@ -9,7 +9,7 @@ on:
 jobs:
   erlang:
     name: Test on OTP ${{ matrix.otp_version }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
         otp_version: ['26.2']
@@ -27,15 +27,6 @@ jobs:
     strategy:
       matrix:
         include:
-          - pair:
-              elixir: '1.10'
-              otp: '23.0'
-          - pair:
-              elixir: '1.11'
-              otp: '23.0'
-          - pair:
-              elixir: '1.12'
-              otp: '24.0'
           - pair:
               elixir: '1.16'
               otp: '26.2'
