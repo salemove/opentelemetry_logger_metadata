@@ -13,13 +13,14 @@ jobs:
     strategy:
       matrix:
         otp_version: ['26.2']
+        rebar3: ['3.21.0', '3.24.0']
     steps:
     - uses: actions/checkout@v2
     - uses: erlef/setup-beam@v1
       with:
         otp-version: ${{ matrix.otp_version }}
-    - name: Compile
-      run: rebar3 compile
+        rebar3-version: ${{matrix.rebar3}}
+    - run: rebar3 compile
 
   elixir:
     name: OTP ${{matrix.otp_version}} / Elixir ${{matrix.elixir}}
