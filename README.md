@@ -12,7 +12,7 @@ list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:opentelemetry_logger_metadata, "~> 0.1.0"}
+    {:opentelemetry_logger_metadata, "~> 0.2.0"}
   ]
 end
 ```
@@ -34,7 +34,7 @@ The package can be installed by adding `opentelemetry_logger_metadata` to your
 list of dependencies:
 
 ```
-  {deps, [{opentelemetry_logger_metadata, "~> 0.1.0"}]}.
+  {deps, [{opentelemetry_logger_metadata, "~> 0.2.0"}]}.
 ```
 
 In your application start:
