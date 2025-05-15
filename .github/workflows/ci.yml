@@ -9,17 +9,18 @@ on:
 jobs:
   erlang:
     name: Test on OTP ${{ matrix.otp_version }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
-        otp_version: ['24.0']
+        otp_version: ['26.2']
+        rebar3: ['3.21.0', '3.24.0']
     steps:
     - uses: actions/checkout@v2
     - uses: erlef/setup-beam@v1
       with:
         otp-version: ${{ matrix.otp_version }}
-    - name: Compile
-      run: rebar3 compile
+        rebar3-version: ${{matrix.rebar3}}
+    - run: rebar3 compile
 
   elixir:
     name: OTP ${{matrix.otp_version}} / Elixir ${{matrix.elixir}}
@@ -28,14 +29,8 @@ jobs:
       matrix:
         include:
           - pair:
-              elixir: '1.10'
-              otp: '23.0'
-          - pair:
-              elixir: '1.11'
-              otp: '23.0'
-          - pair:
-              elixir: '1.12'
-              otp: '24.0'
+              elixir: '1.16'
+              otp: '26.2'
             lint: lint
     steps:
       - uses: actions/checkout@v2
@@ -43,7 +38,7 @@ jobs:
         with:
           otp-version: ${{matrix.pair.otp}}
           elixir-version: ${{matrix.pair.elixir}}
-      - uses: actions/cache@v2
+      - uses: actions/cache@v4
         with:
           path: |
             deps

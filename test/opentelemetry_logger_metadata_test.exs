@@ -21,7 +21,18 @@ defmodule OpentelemetryLoggerMetadataTest do
   end
 
   test "does not add trace identifiers when not in a trace" do
-    message = capture_log(fn -> Logger.warn("Test message") end)
+    {_, message} =
+      with_log(
+        [
+          colors: [enabled: false],
+          format: {LogstashLoggerFormatter, :format},
+          metadata: :all
+        ],
+        fn ->
+          Logger.warning("Test message")
+        end
+      )
+
     decoded_message = Jason.decode!(message)
     refute Map.has_key?(decoded_message, "trace_id")
     refute Map.has_key?(decoded_message, "span_id")
@@ -29,7 +40,18 @@ defmodule OpentelemetryLoggerMetadataTest do
 
   test "adds trace_id and span_id to log metadata when in a trace" do
     OpenTelemetry.Tracer.with_span "test span" do
-      message = capture_log(fn -> Logger.warn("Test message") end)
+      {_, message} =
+        with_log(
+          [
+            colors: [enabled: false],
+            format: {LogstashLoggerFormatter, :format},
+            metadata: :all
+          ],
+          fn ->
+            Logger.warning("Test message")
+          end
+        )
+
       decoded_message = Jason.decode!(message)
       assert Map.has_key?(decoded_message, "trace_id")
       assert Map.has_key?(decoded_message, "span_id")

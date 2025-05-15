@@ -8,7 +8,7 @@ defmodule OpentelemetryLoggerMetadata.MixProject do
     [
       app: app,
       version: version(Keyword.fetch!(desc, :vsn)),
-      elixir: "~> 1.10",
+      elixir: "~> 1.16",
       start_permanent: Mix.env() == :prod,
       deps: deps(Keyword.fetch!(config, :deps)),
       docs: [
@@ -51,8 +51,8 @@ defmodule OpentelemetryLoggerMetadata.MixProject do
     |> Enum.concat([
       {:opentelemetry, "~> 1.0", only: [:test]},
       {:logstash_logger_formatter, "~> 1.1", only: [:test]},
-      {:jason, "~> 1.0", only: [:test]},
-      {:ex_doc, "~> 0.24", only: [:dev], runtime: false}
+      {:jason, "~> 1.4", only: [:test]},
+      {:ex_doc, "~> 0.31", only: [:dev], runtime: false}
     ])
   end
 
